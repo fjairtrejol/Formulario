@@ -1,0 +1,101 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package formulario;
+import javax.swing.*;
+import java.lang.Math;
+
+/**
+ *
+ * @author TICS
+ */
+public class Formulario {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int opcion=0;
+        int opcion1=0;
+        int opcion2=0;
+        double base,altura,area,volumen,area_triangulo,area_circulo,radio,area_rectangulo
+       ,ladoa,ladob,volumen_cilindro,Ab,h,volumen_piramide,areabase,rad,alt;
+        do{
+            opcion=Integer.parseInt(JOptionPane.showInputDialog("Formulario \n"+ 
+            "1)AREA \n"+  
+            "2)volumen\n"+         
+            "3)SALIR \n"+ 
+              "Ingresa una opcion:"));
+            switch(opcion)
+                    {
+                        case 1:{
+                            opcion1=Integer.parseInt(JOptionPane.showInputDialog("AREAS \n"+ 
+            "1)triangulo \n"+  
+            "2)circulo\n"+         
+            "3)rectangulo\n"+ 
+            "4)SALIR \n" +
+              "Ingresa una opcion:"));
+                        }
+            switch(opcion1)
+            {
+                case 1:
+                        base=Double.parseDouble(JOptionPane.showInputDialog("Ingresa la base:"));
+                        altura=Double.parseDouble(JOptionPane.showInputDialog("Ingresa la altura"));
+                        area_triangulo=(base+altura)/2;
+                        JOptionPane.showMessageDialog(null,"EL area de triangulo es:"+ area_triangulo);
+                        break;
+                        
+                        case 2:
+                        {
+                        radio=Double.parseDouble(JOptionPane.showInputDialog("Ingresa el radio:"));
+                        area_circulo=radio*radio*3.1416;
+                        JOptionPane.showMessageDialog(null,"EL area de circulo es:"+ area_circulo);
+                        break;
+                             }
+                        case 3:
+                        {
+                        ladoa=Double.parseDouble(JOptionPane.showInputDialog("Ingresa el primer lado :"));
+                        ladob=Double.parseDouble(JOptionPane.showInputDialog("Ingresa el segundo lado :"));
+                        area_rectangulo=ladoa*ladoa*ladob*ladob;
+                        JOptionPane.showMessageDialog(null,"EL area de rectangulo es:"+ area_rectangulo);
+                        break;
+                             }
+                       
+                      
+                        }
+                        case 2:{
+                            opcion2=Integer.parseInt(JOptionPane.showInputDialog("VOLUMEN \n"+ 
+            "1)cilindro \n"+  
+            "2)piramide \n"+         
+            "3)SALIR \n" +
+              "Ingresa una opcion:"));
+                        }
+                         switch(opcion2)
+            {
+                case 1:
+                        areabase=Double.parseDouble(JOptionPane.showInputDialog("Ingresa  area base:"));
+                        alt=Double.parseDouble(JOptionPane.showInputDialog("Ingresa la altura"));
+                        rad=Double.parseDouble(JOptionPane.showInputDialog("Ingresa radio de cilindro"));
+                        volumen_cilindro=areabase*alt*rad;
+                        JOptionPane.showMessageDialog(null,"EL volumen de cilindro es:"+ volumen_cilindro);
+                        break;
+                        
+                        case 2:
+                        {
+                        Ab=Double.parseDouble(JOptionPane.showInputDialog("Ingresa  area base:"));
+                        h=Double.parseDouble(JOptionPane.showInputDialog("Ingresa la altura"));
+                        volumen_piramide=(1/3)*Ab*h;
+                        JOptionPane.showMessageDialog(null,"EL volumen de piramide es:"+ volumen_piramide);
+                        break;
+                             }        
+                        }
+                        
+                        
+            }
+        
+               }while(opcion!=3);
+         }
+}
